@@ -23,7 +23,7 @@
       var eventGraph  = $('#graph').MPChart({chartType: 'line'});
       var eventTable  = $('#table').MPTable({
         showPercentages: true,
-        firstColHeader: 'Event'
+        firstColHeader: '#eventSelect'
       });
 
       var runQuery = function() {
@@ -36,10 +36,6 @@
             eventGraph.MPChart('setData', results);
             eventTable.MPTable('setData', results);
          
-         if (eventName) {
-          MP.api.funnnel(eventName, propName, dateRange).done(function(results) {
-            eventGraph.MPChart('setData', results);
-            eventTable.MPTable('setData', results);
           });
         }
       };
